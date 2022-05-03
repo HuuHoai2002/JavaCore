@@ -82,7 +82,7 @@ public class Bai3 {
 		String name = scanner.nextLine();
 		System.out.println("Những sinh viên có tên " + name + " là : ");
 		for (int i = 0; i < linkedListSinhVien.size(); i++) {
-			if(linkedListSinhVien.get(i).getHoTen() == name) {
+			if(linkedListSinhVien.get(i).getHoTen().equalsIgnoreCase(name)) {
 				linkedListSinhVien.get(i).Xuat();
 			}
 		}
