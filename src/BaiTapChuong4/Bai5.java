@@ -61,7 +61,7 @@ public class Bai5 {
 		String tenLop = scanner.nextLine();
 		System.out.println("Tất cả các sinh viên có trong lớp " + tenLop + " là: ");
 		for(int i = 0; i < n; i++) {
-			if(mapSinhVien.get("sv" + (i + 1)).getLop() == tenLop) {
+			if(mapSinhVien.get("sv" + (i + 1)).getLop().equalsIgnoreCase(tenLop)) {
 				System.out.println("đúng");
 				mapSinhVien.get("sv" + (i + 1)).Xuat();
 			}
@@ -70,7 +70,7 @@ public class Bai5 {
 		String masv = scanner.nextLine();
 		System.out.println("Tất cả các sinh viên có mã sinh viên " + masv + " là: ");
 		for(int i = 0; i < n; i++) {
-			if(mapSinhVien.get("sv" + (i + 1)).getMaSv() == masv) {
+			if(mapSinhVien.get("sv" + (i + 1)).getMaSv().equalsIgnoreCase(masv)) {
 				System.out.println("đúng");
 				mapSinhVien.get("sv" + (i + 1)).Xuat();
 			}
