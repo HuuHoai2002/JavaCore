@@ -3,6 +3,7 @@ package BaiTapChuong3.Bai4;
 import java.util.Scanner;
 
 public class Main extends Contact {
+	
 	@Override
 	void NhapContact() {
 		System.out.println("Nhap vao ten: ");
@@ -16,7 +17,7 @@ public class Main extends Contact {
 		System.out.println("Ten: " + ten);
 		System.out.println("So dien thoai: " + soDienThoai);
 	}
-
+	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int luachon;
@@ -108,6 +109,7 @@ public class Main extends Contact {
 						}
 					}
 				}
+				break;	
 			}
 			case 5: {
 				if (index == 0) {
@@ -121,7 +123,7 @@ public class Main extends Contact {
 					}
 					System.out.println("\nBan muon sua contact nao ?:  ");
 					int contact = Integer.parseInt(sc.nextLine());
-					if(contact < index) {
+					if (contact <= index) {
 						System.out.println("Nhap vao so dien thoai moi: ");
 						String stdMoi = sc.nextLine();
 						arrContact[contact - 1].setSoDienThoaiString(stdMoi);
@@ -129,6 +131,7 @@ public class Main extends Contact {
 						System.out.println("Hien tai chua co contact nay");
 					}
 				}
+				break;
 			}
 			default:
 				break;
