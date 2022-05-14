@@ -16,5 +16,6 @@ public class Test {
         System.out.println("Tên phải là 1 chuỗi ký tự , vui lòng nhập lại");
       }
     }
+    sc.close();
   }
 }
