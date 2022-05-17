@@ -3,11 +3,11 @@ package BaiKiemTraB2.Bai1;
 import java.util.Scanner;
 
 public class HoaDon {
-  private String soHoaDon;
-  private String ngayBan;
-  private String tenHang;
-  private int soLuong;
-  private double giaBan;
+  protected String soHoaDon;
+  protected String ngayBan;
+  protected String tenHang;
+  protected int soLuong;
+  protected double giaBan;
   Scanner scanner = new Scanner(System.in);
 
   public void Nhap() {
