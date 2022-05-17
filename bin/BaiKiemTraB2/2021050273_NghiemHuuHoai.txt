@@ -1,0 +1,105 @@
+//Class HoaDon: 
+
+package BaiKiemTraB2.Bai1;
+
+import java.util.Scanner;
+
+public class HoaDon {
+	protected String soHoaDon;
+	protected String ngayBan;
+	protected String tenHang;
+	protected int soLuong;
+	protected double giaBan;
+	Scanner scanner = new Scanner(System.in);
+
+	public void Nhap() {
+		System.out.println("Nhap vao so hoa don: ");
+		soHoaDon = scanner.nextLine();
+		System.out.println("Nhap vao ngay ban: ");
+		ngayBan = scanner.nextLine();
+		System.out.println("Nhap vao ten hang: ");
+		tenHang = scanner.nextLine();
+		try {
+			System.out.println("Nhap vao so luong: ");
+			soLuong = Integer.parseInt(scanner.nextLine());
+			System.out.println("Nhap vao gia ban: ");
+			giaBan = Double.parseDouble(scanner.nextLine());
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void Xuat() {
+		System.out.println("So hoa don: " + soHoaDon);
+		System.out.println("Ngay ban: " + ngayBan);
+		System.out.println("Ten hang: " + tenHang);
+		System.out.println("So luong: " + soLuong);
+		System.out.println("Gia ban: " + giaBan);
+	}
+
+	public double tinhTien() {
+		return this.soLuong * this.giaBan;
+	}
+}
+
+
+//Class DongHoaDon
+
+package BaiKiemTraB2.Bai1;
+
+import java.util.Scanner;
+
+public class DongHoaDon extends HoaDon {
+	private String tenNhaCungCap;
+	private String ngayLap;
+
+	Scanner sc = new Scanner(System.in);
+
+	public void Nhap() {
+		super.Nhap();
+		System.out.println("Nhap vao ten nha cung cap");
+		tenNhaCungCap = sc.nextLine();
+		System.out.println("Nhap vao ngay lap: ");
+		ngayLap = sc.nextLine();
+	}
+
+	public void Xuat() {
+		super.Xuat();
+		System.out.println("Ten nha cung cap: " + tenNhaCungCap);
+		System.out.println("Ngay lap: " + ngayLap);
+	}
+
+	public double TinhTien() {
+		return this.giaBan * this.soLuong;
+	}
+}
+
+
+//Class Main
+
+package BaiKiemTraB2.Bai1;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhap vao so luong hoa don: ");
+		int n = sc.nextInt();
+		HoaDon hd[] = new HoaDon[n];
+		for (int i = 0; i < n; i++) {
+			System.out.println("Nhap vao hoa don thu: " + (i + 1));
+			hd[i] = new HoaDon();
+			hd[i].Nhap();
+		}
+		System.out.println();
+		System.out.println("Thong tin cac hoa don vua nhap la: ");
+		System.out.println();
+		for (HoaDon hoaDon : hd) {
+			hoaDon.Xuat();
+			System.out.println("Tong tien: " + hoaDon.tinhTien());
+			System.out.println();
+		}
+		sc.close();
+	}
+}
